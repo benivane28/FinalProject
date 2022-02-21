@@ -1,0 +1,31 @@
+{% extends 'mywebApp/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<h1 style="color:white;">NUESTROS PRODUCTOS</h1>
+    <p><h2 style="color:white;">Ofrecemos dos opciones de productos: RAMOS o BOUQUETS acorde a la ocasion que se solicite y con flores de temporada hermosas!</h2></p>
+
+<div class='container'>
+    <div class ='row'>
+
+{% for producto in productos %}
+
+        <div class='col-md-3'>
+
+            <div class='card' style='width:100%; margin:5px 5px;'>
+            <img src='{{producto.imagen.url}}' class='card-img-top'>
+                <div class='card-body' style='text-align:center;'>
+                    <h7 class='card-title'>{{producto.nombre}}</h7>
+                    <p class='card-text'>{{producto.precio}}&nbsp;$</p>
+                    <p class='card-text'>{{producto.servicio}}</p>
+                </div>
+            </div>    
+        </div>
+{% endfor %}
+    </div>
+</div>
+
+{% endblock %}

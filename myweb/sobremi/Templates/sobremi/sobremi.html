@@ -1,0 +1,23 @@
+{% extends 'mywebApp/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<p><h1 style='color:white;'>CONOCE MÀS DE MI...</h1></p>
+<p><h2 style='color:white;'>Me presento brevemente:</h2></p>
+
+
+<p>Me llamo Vanessa Benites y soy la creadora de este sitio Web, seguì la carrera de ingenieria industrial y obtuve experiencia durante 5 años liderando
+   equipos de mejora continua en rubros como consumo masivo y farmaceùtico. Sin embargo, en el 2021 quise darle un giro a mi vida, no solo profesional,
+   sino tambien personal e ir por temas que realmente me interesaban, por lo que quise entrar con todas las ganas al mundo tecnològico, especificamente,
+   a ciencia de datos. Hoy en dia ya he cursado un bootcamp en aplicacion de ciencia de datos por el MIT y me encuentro a puertas de empezar un master
+   en el mismo tema y sobre todo ya entrar al mercado laboral. Mi meta es poder crear una startup o algun proyecto enfocado a preservar el cuidado del
+   ambiente y tambien me interesaria formar parte de un proyecto que de oportunidades de crecimiento a niñas en conocimientos tecnològicos y puedan 
+   robustecer el nivel en el mismo en latinoamerica.</p>
+<p><img src='media/sobremi/mifoto_1.jpg'></p>    
+<a href='{% url 'vermas' %}'>Ver Mas</a>
+    
+{% endblock %} 
+

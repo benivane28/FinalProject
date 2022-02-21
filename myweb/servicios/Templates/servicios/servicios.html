@@ -1,0 +1,24 @@
+{% extends 'mywebApp/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<h1 style="color:white;">NUESTROS SERVICIOS</h1>
+    <p><h2 style="color:white;">Ofrecemos tres servicios divididos en: Ocasiones Especiales, Dìas Festivos y Baby Showers.</h2></p>
+
+    {% for servicio in servicios %}
+
+<div><p>
+
+    <h2 style="color:white;">{{servicio.titulo}}</h2>
+    <p style="color:white;">{{servicio.contenido}}</p>
+    <p><img src="{{servicio.imagen.url}}"></p>
+  
+
+</p></div>
+
+
+    {% endfor %}
+{% endblock %} 

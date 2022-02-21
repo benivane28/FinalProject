@@ -1,0 +1,15 @@
+<html>
+
+<body>
+
+    <form action='' method='POST'>
+
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <button type='submit'>Iniciar Sesiòn</button>
+    </form>
+
+</body>
+</html>

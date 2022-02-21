@@ -1,0 +1,46 @@
+{% extends 'mywebApp/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+   <!-- Heading -->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'mywebApp/img/foto1.jpg' %}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-upper">No hay momentos exclusivos</span>
+            <span class="section-heading-lower">PARA COMENZAR TU DIA DE LA MEJOR MANERA</span>
+          </h2>
+          <p class="mb-3">Recibe las flores de temporada mediante suscripciones semanales, mensuales y anuales con envios a todo lima.
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Las flores son nuestra inspiracion dia a dia</span>
+                <span class="section-heading-lower">#lightUPyourDay</span>
+              </h2>
+              <p class="mb-0">Somos fieles creyentes en conservar el equilibrio de la naturaleza,es por tal motivo, que nuestro servicio sigue un proceso sostenible con nuestros recursos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}

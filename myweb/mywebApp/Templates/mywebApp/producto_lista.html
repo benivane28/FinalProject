@@ -1,0 +1,16 @@
+{% extends 'mywebApp/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+    <h1>Productos de la dispensa</h1>
+    <ul>
+        {% for producto in productos %}
+            <li>
+                <p>Nombre: {{producto.nombre}}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
