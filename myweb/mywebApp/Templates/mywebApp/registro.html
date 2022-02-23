@@ -1,0 +1,21 @@
+
+{% extends 'mywebApp/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+    <form action ='' method='POST'>
+
+        {% csrf_token %}
+        <table>
+        {{formu.as_table}}
+        </table>
+
+        <input type='submit' value='Registrate!'>
+
+    </form>
+
+
+{% endblock %} 

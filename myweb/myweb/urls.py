@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from productos import views
-from mywebApp.views import login_request,LogoutView,ProductoListView
+from mywebApp.views import login_request,LogoutView,ProductoListView,register,ProductoDetalle,ProductoNuevo,ProductoUpdate,ProductoDelete
 from sobremi.views import vermas
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,4 +31,9 @@ urlpatterns = [
     path('logout',LogoutView.as_view(template_name='mywebApp/logout.html'),name='Logout'),
     path('list/',ProductoListView.as_view(template_name='mywebApp/producto_lista.html'),name='productos'),
     path('vermas/',vermas,name='vermas'),
+    path('register',register,name='Registro'),
+    path('detalle/',ProductoDetalle.as_view(),name='Detalle'),
+    path('nuevo/',ProductoNuevo.as_view(),name='Crear'),
+    path('update/',ProductoUpdate.as_view(),name='Actualizar'),
+    path('delete/',ProductoDelete.as_view(),name='Borrar'),
 ]

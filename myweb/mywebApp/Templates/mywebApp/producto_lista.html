@@ -10,7 +10,12 @@
         {% for producto in productos %}
             <li>
                 <p>Nombre: {{producto.nombre}}</p>
+                <a href='{% url 'Detalle' producto.id %}'>Detalle</a>
+                <a href='{% url 'Actualizar' producto.id %}'>Actualizar</a>
+                <a href='{% url 'Borrar' producto.id %}'>Borrar</a>
             </li>
         {% endfor %}
+        <a href='{% url 'Crear' %}'>Crear</a>
+        
     </ul>
 {% endblock %}

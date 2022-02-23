@@ -1,0 +1,16 @@
+{% extends 'mywebApp/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+    <ul>
+        <li>Nombre del producto: {{producto.nombre}}</li>
+        <li>Servicio al que corresponde: {{producto.servicio}}</li>
+        <li>Precio del producto: {{producto.precio}}</li>
+    </ul>
+    <p>
+        <a href='{% url 'productos' %}'>Regresar</a>
+    
+{% endblock %} 
