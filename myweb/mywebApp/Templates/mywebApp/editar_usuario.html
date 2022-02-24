@@ -1,0 +1,23 @@
+
+{% extends 'mywebApp/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<h1>Formulario - Editar Perfil</h1>
+
+    <form action ='' method='POST'>
+
+        {% csrf_token %}
+        <table>
+        {{miform.as_table}}
+        </table>
+
+        <input type='submit' value='Registrate!'>
+
+    </form>
+
+
+{% endblock %} 

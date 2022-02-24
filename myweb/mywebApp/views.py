@@ -1,3 +1,4 @@
+from distutils.command.sdist import sdist
 from venv import create
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
@@ -8,9 +9,11 @@ from django.views.generic import ListView
 from django.views.generic.edit import UpdateView,DeleteView,CreateView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
-
+from django.contrib.auth.models import User
 from productos.models import Producto
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm,UserEditForm
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -72,7 +75,7 @@ class ProductoUpdate(UpdateView):
 class ProductoDelete(DeleteView):
     model = Producto
     success_url = reverse_lazy('productos')
-    #template_name='mywebApp/producto_detalle.html'
+    template_name='mywebApp/producto_confirm_delete.html'
 
   
 
@@ -88,3 +91,35 @@ def register(request):
     else:
         formu = UserRegisterForm()
     return render(request,'mywebApp/registro.html',{'formu': formu})
+
+
+class UserCreate(CreateView):
+    model = User
+    success_url = reverse_lazy('Login')
+    template_name='mywebApp/registro.html'
+    form_class=UserRegisterForm
+
+# class UsuarioUpdate(UpdateView):
+#     model = User
+#     success_url = reverse_lazy('login')
+#     fields = ['email','password1','password2']
+#     template_name = 'mywebApp/editar_usuario.html'
+
+@login_required
+def editar_perfil(request):
+    usuario = request.user
+
+    if request.method == 'POST':
+        formulario = UserEditForm(request.POST)
+        if formulario.is_valid():
+            data = formulario.cleaned_data
+            usuario.email = data['email']
+            usuario.password1 = data['password1']
+            usuario.password2 = data['password2']
+            usuario.save()
+            return render(request,'mywebApp/home.html')
+
+    else:
+        formulario = UserEditForm({'email': usuario.email})
+
+    return render(request,'mywebApp/editar_usuario.html',{'miform':formulario, 'usuario':usuario})
